@@ -325,3 +325,14 @@ for(n in 1:999)
   {total=total+n}
   else {print (n)}}  
 print(total)
+
+
+
+
+
+
+
+
+
+
+
