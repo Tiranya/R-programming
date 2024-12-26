@@ -57,4 +57,57 @@ if (n%%2==0)
 {y=c(y,n)}  
 print (y)
 
+#complete code for the fibonacci sequence including the sum of the evens
+rm(n1,n2,n3,x,y)
+n1=0
+n2=1
+n3=n1+n2
+x=c(n1,n2,n3)
+y=0
+
+while (n3<80){
+  (n1=n2)
+  (n2=n3)
+  (n3=n1+n2)
+  (x=c(x,n3))}
+
+for (n in x)
+{if (n%%2==0)
+{y=y+n}}
+
+print (y)
+
+rm(n,n1,n2,n3,x,y)
+#polishing it to reduce the number of steps
+n1=0
+n2=1
+n3=n1+n2
+x=c(n1,n2,n3)
+y=0
+
+while (n3<80)
+{(n1=n2)
+  (n2=n3)
+  (n3=n1+n2)
+  if (n3%%2==0)
+  {y=y+n}}
+
+print (y)
+
+rm(n1,n2,n3,x,y)
+#attempt 2
+n1=0
+n2=1
+n3=n1+n2
+y=0
+
+while (n3<80)
+{(n1=n2)
+  (n2=n3)
+  (n3=n1+n2)
+  if (n3%%2==0)
+  {y=y+n3}}
+
+print (y)
+
 
