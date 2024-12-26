@@ -110,4 +110,19 @@ while (n3<80)
 
 print (y)
 
+# this code though has a problem, coz the question was lower than 100, 
+# whereas in this it is 80. so now I am trying to do this.
+n1=0
+n2=1
+n3=n1+n2
+y=0
 
+while (n3<100)
+{(n1=n2)
+  (n2=n3)
+  (n3=n1+n2)
+  if (n3<100)
+  {if(n3%%2==0)
+  {y=y+n3}}}
+
+print (y)
