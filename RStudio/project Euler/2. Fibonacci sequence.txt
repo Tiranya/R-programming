@@ -1,0 +1,17 @@
+Fibonacci sequence
+n1=0
+n2=1
+n3=n1+n2
+y=0
+
+while (n3<100)
+{(n1=n2)
+(n2=n3)
+(n3=n1+n2)
+if (n3<100)
+{if(n3%%2==0)
+{y=y+n3}}}
+
+print (y)
+
+final 
