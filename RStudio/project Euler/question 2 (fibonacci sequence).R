@@ -1,117 +1,5 @@
 1+1
-#project euler - question_2
-#sum of the even numbers of the fibonacci sequence lower than 4,000,000
-#step1 - constructing the sequence
-
-n1=0
-n2=1
-n3=n1+n2
-x=c(n1,n2,n3)
-
-while(n3<100)
-{n1=n2  
-n2=n3
-n3=n1+n2
-x=c(x,n3)}
-print (x)
-
-#got the fibonacci sequence, but the result has one extra number. the Final that wwe need is 89
-#but since this is still lower than 100 the loop will still continue for one final round. 
-#I guess the way to do it is to lower the limit
-
-#step11 - attempt_2
-rm(n1,n2,n3,x)
-n1=0
-n2=1
-n3=n1+n2
-x=c(n1,n2,n3)
-
-while (n3<80)
-{(n1=n2)  
-(n2=n3)  
-(n3=n1+n2)  
-x=c(x,n3)  
-}
-print (x)
-
-#step 2 - filtering out the even numbers. 
-if (x%%2==0)
-{y=c(y,x)}  
-print (y)
-
-#step2 - attempt 2
-y=0
-if (x%%2==0)
-{y=c(y,x)}  
-
-#attempt 3
-y=0
-if(x%%2==0)
-{y=c(y,x)}  
-
-#cannot use a series of vectors in a if has to use a loop
-#attempt4
-y=c()
-for (n in x) 
-if (n%%2==0)  
-{y=c(y,n)}  
-print (y)
-
-#complete code for the fibonacci sequence including the sum of the evens
-rm(n1,n2,n3,x,y)
-n1=0
-n2=1
-n3=n1+n2
-x=c(n1,n2,n3)
-y=0
-
-while (n3<80){
-  (n1=n2)
-  (n2=n3)
-  (n3=n1+n2)
-  (x=c(x,n3))}
-
-for (n in x)
-{if (n%%2==0)
-{y=y+n}}
-
-print (y)
-
-rm(n,n1,n2,n3,x,y)
-#polishing it to reduce the number of steps
-n1=0
-n2=1
-n3=n1+n2
-x=c(n1,n2,n3)
-y=0
-
-while (n3<80)
-{(n1=n2)
-  (n2=n3)
-  (n3=n1+n2)
-  if (n3%%2==0)
-  {y=y+n}}
-
-print (y)
-
-rm(n1,n2,n3,x,y)
-#attempt 2
-n1=0
-n2=1
-n3=n1+n2
-y=0
-
-while (n3<80)
-{(n1=n2)
-  (n2=n3)
-  (n3=n1+n2)
-  if (n3%%2==0)
-  {y=y+n3}}
-
-print (y)
-
-# this code though has a problem, coz the question was lower than 100, 
-# whereas in this it is 80. so now I am trying to do this.
+1+1
 n1=0
 n2=1
 n3=n1+n2
@@ -126,3 +14,31 @@ while (n3<100)
   {y=y+n3}}}
 
 print (y)
+
+rm(n1,n2,n3,y)
+n1=0
+n2=1
+n3=n1+n2
+y=0
+
+while (n3<4000000)
+{(n1=n2)
+  (n2=n3)
+  (n3=n1+n2)
+  if (n3<4000000)
+  {if(n3%%2==0)
+  {y=y+n3}}}
+
+print (y)
+
+seq(1:10,2)
+x=(1:10,2)
+x=seq(1:10 by 2)
+x=seq(1,10,2)
+print (x)
+list(name="Fred",numeric=(1:5),matrix=(1:10))
+list(name="fred",numeric=seq(1,5,2),matrix=matrix(1:10,2,5))
+mylist=list(name="fred",numeric=seq(1,5,2),matrix=matrix(1:10,2,5))
+str(mylist)
+gender=as.factor(c(rep("male",20),rep("female",30)))
+print(gender)                 
