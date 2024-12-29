@@ -29,7 +29,7 @@ print (y)
 
 result -  1 2 2 3 3 4 4 4 5 5
 
-#this is to eliminate the repetition of the numbers in the sequence
+#error 1 - this is to eliminate the repetition of the numbers in the sequence
 #attempt 4
 n=1
 x=1
@@ -43,3 +43,24 @@ y=c(y,z)}}
 print (y)
 
 #failed attempt
+
+#attempt 5
+#The error in this is that
+#n is inserted into the y variable after every division. 
+#instead, if it came out only once, then the error will be corrected.
+
+n=1
+x=2
+y=c()
+z=0
+for (n in 1:5)
+{for (x in 1:n){
+if (n%%x==0)
+{z <- n}}
+if (z==n)
+{y=c(y,z)}}
+print (y)
+
+#output -  1 2 3 4 5
+
+#error 2
