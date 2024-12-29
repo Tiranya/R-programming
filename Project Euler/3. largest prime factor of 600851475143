@@ -1,0 +1,284 @@
+
+R version 4.4.2 (2024-10-31 ucrt) -- "Pile of Leaves"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> for (x in 1:10)
++ print (x)
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+> #this is a program to obtain the largest prime factor of 600851475143
+> #the number is too big though, therefore, I will be starting off with 30
+> #the answer should be 2,3,5
+> #the task is too big
+> #therefore, i will try to get the first 5 prime numbers as a sequence
+> 
+> #step 1 - program to get the first 5 prime numbers as a sequence
+> #attempt 1
+> n=1
+> x=1
+> y=c()
+> for (n in 1:5){
++ while (x in 1:n){
+Error: unexpected 'in' in:
+"for (n in 1:5){
+while (x in"
+> if (n%%x==0)
++ {y=c(y,n)}}}
+Error: unexpected '}' in:
+"if (n%%x==0)
+{y=c(y,n)}}"
+> print (y)
+NULL
+> #this is a program to obtain the largest prime factor of 600851475143
+> #the number is too big though, therefore, I will be starting off with 30
+> #the answer should be 2,3,5
+> #the task is too big
+> #therefore, i will try to get the first 5 prime numbers as a sequence
+> 
+> #step 1 - program to get the first 5 prime numbers as a sequence
+> #attempt 2
+> n=1
+> x=1
+> y=c()
+> for (n in 1:5)
++ {while (x in 1:n){
+Error: unexpected 'in' in:
+"for (n in 1:5)
+{while (x in"
+> if (n%%x==0)
++ {y=c(y,n)}}}
+Error: unexpected '}' in:
+"if (n%%x==0)
+{y=c(y,n)}}"
+> print (y)
+NULL
+> #attempt 3
+> n=1
+> x=1
+> y=c()
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {y=c(y,n)}}}
+> print (y)
+ [1] 1 2 2 3 3 4 4 4 5 5
+> rm(n,x,y)
+> ls()
+character(0)
+> #this is to eliminate the repetition of the numbers in the sequence
+> attempt 4
+Error: unexpected numeric constant in "attempt 4"
+> n=1
+> x=1
+> y=c()
+> z=1
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {z=n}
++ y=c(y,n)}}
+> print (y)
+ [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+> #this is to eliminate the repetition of the numbers in the sequence
+> attempt 4
+Error: unexpected numeric constant in "attempt 4"
+> n=1
+> x=1
+> y=c()
+> z=1
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {z=n}
++ y=c(y,z)}}
+> print (y)
+ [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+> print (z)
+[1] 5
+> #failed attempt
+> ls()
+[1] "n" "x" "y" "z"
+> rm(n,x,y,z)
+> #attempt 5
+> #The error in this is that
+> #n is inserted into the y variable after every division. 
+> #instead, if it came out only once, then the error will be corrected.
+> n=1
+> x=2
+> y=c()
+> z=1
+> for (n in 1:5)
++ {for (x in 2:n-1){
++ if (n%%x==0)
++ y=c(y,n)}}
+Error in if (n%%x == 0) y = c(y, n) : 
+  missing value where TRUE/FALSE needed
+> print (y)
+[1] 1
+> rm(n,x,y,z)
+> ls()
+character(0)
+> 
+> 
+> #attempt 5.2
+> #The error in this is that
+> #n is inserted into the y variable after every division. 
+> #instead, if it came out only once, then the error will be corrected.
+> n=1
+> x=2
+> y=c()
+> for (n in 1:5)
++ {for (x in 2:n-1){
++ if (n%%x==0)
++ {y=c(y,n)}}}
+Error in if (n%%x == 0) { : missing value where TRUE/FALSE needed
+> print (y)
+[1] 1
+> 
+> 
+> #attempt 5.3
+> n=1
+> x=2
+> y=c()
+> for (n in 1:5)
++ {for (x in 2:n-1){
++ if (n%%x==0)
++ {y=c(y,n)}}}
+Error in if (n%%x == 0) { : missing value where TRUE/FALSE needed
+> print (y)
+[1] 1
+> 
+> 
+> #repeating previous attempt
+> #attempt 3
+> n=1
+> x=1
+> y=c()
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {y=c(y,n)}}}
+> print (y)
+ [1] 1 2 2 3 3 4 4 4 5 5
+> 
+> 
+> #attempt 5.4
+> n=1
+> x=2
+> y=c()
+> z=0
+> for (n in 1:5)
++ {for (x in 2:n-1){
++ if (n%%x==0)
++ {z=n}}
++ if (z=n)
+Error: unexpected '=' in:
+"{z=n}}
+if (z="
+> {y=c(y,n)}}
+Error: unexpected '}' in "{y=c(y,n)}}"
+> print (y)
+NULL
+> 
+> 
+> attempt 5.5
+Error: unexpected numeric constant in "attempt 5.5"
+> ls()
+[1] "n" "x" "y" "z"
+> rm(n,x,y,z)
+> 
+> 
+> #attempt 5.5
+> n=1
+> x=2
+> y=c()
+> z=0
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {z=n}}
++ if (z=n)
+Error: unexpected '=' in:
+"{z=n}}
+if (z="
+> {y=c(y,z)}}
+Error: unexpected '}' in "{y=c(y,z)}}"
+> print (y)
+NULL
+> 
+> 
+> v=ls()
+> print (v)
+[1] "n" "x" "y" "z"
+> rm(v)
+> ls()
+[1] "n" "x" "y" "z"
+> rm(list ls())
+Error: unexpected symbol in "rm(list ls"
+> rm(n,x,y,z)
+> ls()
+character(0)
+> 
+> 
+> #attempt 5.6
+> n=1
+> x=2
+> y=c()
+> z=0
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {z <- n}}
++ if (z=n)
+Error: unexpected '=' in:
+"{z <- n}}
+if (z="
+> {y=c(y,z)}}
+Error: unexpected '}' in "{y=c(y,z)}}"
+> print (y)
+NULL
+> 
+> 
+> ls()
+[1] "n" "x" "y" "z"
+> rm(n,x,y,z)
+> 
+> 
+> attempt 5.7
+Error: unexpected numeric constant in "attempt 5.7"
+> #attempt 5.7
+> n=1
+> x=2
+> y=c()
+> z=0
+> for (n in 1:5)
++ {for (x in 1:n){
++ if (n%%x==0)
++ {z <- n}}
++ if (z==n)
++ {y=c(y,z)}}
+> print (y)
+[1] 1 2 3 4 5
+> save.image("D:\\programming\\R-programming\\1. learning the basics\\R-programming\\Project Euler\\3. largest prime factor of 600851475143")
+> 
