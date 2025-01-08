@@ -39,3 +39,60 @@ sqrt (4)
 #output - [1] 2
 #
 sqrt (8)
+#output = [1] 2.828427
+#
+#
+#Vectors
+#Create a vector (vector2a) with numbers 1 to 10
+vector2a=c(1:10)
+print (vector2a)
+#output - [1]  1  2  3  4  5  6  7  8  9 10
+#
+vector2b=c(1,12,13,14,15,16,17,18,19,20)
+print (vector2b)
+#output - [1]  1 12 13 14 15 16 17 18 19 20
+#
+#use the seq function to create a vector2c with 1-100 every 5 numbers
+vector2c = seq(1,100,5)
+print (vector2c)
+#output - [1]  1  6 11 16 21 26 31 36 41 46 51 56 61 66 71 76 81 86 91 96
+#
+#create a vector with vector2d_i with the letters of the alphabet
+vector2d_i = seq(LETTERS)
+print (vector2d_i)
+#output - [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+#[24] 24 25 26
+#
+vector2d_i=c(LETTERS)
+print (vector2d_i)
+#output - [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q"
+#[18] "R" "S" "T" "U" "V" "W" "X" "Y" "Z"
+#
+vector2d_ii = LETTERS[seq(2,26,2)]
+print (vector2d_ii)
+#output - [1] "B" "D" "F" "H" "J" "L" "N" "P" "R" "T" "V" "X" "Z"
+#
+#what is the type of vector2a, 
+#either use the class() function 
+#or ask explicitly using the is.numeric() , is.character() 
+#or the is.logical() functions
+class(vector2a)
+#output - [1] "integer"
+is.numeric(vector2a)
+#output - [1] TRUE
+is.character(vector2a)
+#output - [1] FALSE
+#
+#combine vector2a and vector2d in vector2f, 
+#what is the type of the resulting vector ?
+vector2f=c(vector2a,vector2d_ii)
+print(vector2f)
+#output -  [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "B"  "D"  "F"  "H"  "J" 
+#[16] "L"  "N"  "P"  "R"  "T"  "V"  "X"  "Z"
+class(vector2f)
+#output - [1] "character"
+#
+#Use the sqrt() function to compute the square root of vector2a
+sqrt (vector2a)
+#output - [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
+#[9] 3.000000 3.162278
