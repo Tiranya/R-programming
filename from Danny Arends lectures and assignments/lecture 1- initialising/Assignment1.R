@@ -162,4 +162,31 @@ print (vector3d)
 #        [10,]   91   92   93   94   95   96   97   98   99   100
 #
 #3e - Add column names to matrix3a, using the LETTERS constant
-
+rownames (vector3a) <- c(LETTERS)
+print (vector3a)
+#output - failed output
+#
+rownames (vector3a) <- c(LETTERS [seq (1:10)])
+print (vector3a)
+#attempt successful
+#the number of names should be the same as the number of rows or columns
+#output -  [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+#       A    1   11   21   31   41   51   61   71   81    91
+#       B    2   12   22   32   42   52   62   72   82    92
+#       C    3   13   23   33   43   53   63   73   83    93
+#       D    4   14   24   34   44   54   64   74   84    94
+#       E    5   15   25   35   45   55   65   75   85    95
+#       F    6   16   26   36   46   56   66   76   86    96
+#       G    7   17   27   37   47   57   67   77   87    97
+#       H    8   18   28   38   48   58   68   78   88    98
+#       I    9   19   29   39   49   59   69   79   89    99
+#       J   10   20   30   40   50   60   70   80   90   100
+#
+#3f - Look up the help for the paste() function 
+#and add your own rownames to matrix3a, 
+#in the structure: “measurement N”, where N is the row number
+rownames(vector3a)<-c(paste("measurement"),c(1:10))
+#attempt error
+#the error in this is including "measurement" in the c
+rownames(vector3a)<-paste("measurement",c(1:10))
+print (vector3a)
