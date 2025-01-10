@@ -96,3 +96,70 @@ class(vector2f)
 sqrt (vector2a)
 #output - [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
 #[9] 3.000000 3.162278
+#
+#
+#Question 3
+#3a - We can use the matrix() function to create a matrix, 
+#create a 10x10 matrix that holds the numbers 1 to 100.
+vector3a=matrix(1:100,10,10)
+print (vector3a)
+#output-       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+#        [1,]    1   11   21   31   41   51   61   71   81    91
+#        [2,]    2   12   22   32   42   52   62   72   82    92
+#        [3,]    3   13   23   33   43   53   63   73   83    93
+#        [4,]    4   14   24   34   44   54   64   74   84    94
+#        [5,]    5   15   25   35   45   55   65   75   85    95
+#        [6,]    6   16   26   36   46   56   66   76   86    96
+#        [7,]    7   17   27   37   47   57   67   77   87    97
+#        [8,]    8   18   28   38   48   58   68   78   88    98
+#        [9,]    9   19   29   39   49   59   69   79   89    99
+#       [10,]   10   20   30   40   50   60   70   80   90   100
+#
+#
+#3b - If you look at the help file of the matrix() function, 
+#you see it has a parameter byrow do the same thing as in exercise 3a, 
+#but now set the byrow parameter to TRUE, 
+#how is this matrix different from the one in exercise 3a ?
+vector3b=matrix(1:100,10,10,byrow=TRUE)
+print (vector3b)
+#the logic of 'true'
+#should be in capitals for the statement to be identified
+#output -       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+#         [1,]    1    2    3    4    5    6    7    8    9    10
+#         [2,]   11   12   13   14   15   16   17   18   19    20
+#         [3,]   21   22   23   24   25   26   27   28   29    30
+#         [4,]   31   32   33   34   35   36   37   38   39    40
+#         [5,]   41   42   43   44   45   46   47   48   49    50
+#         [6,]   51   52   53   54   55   56   57   58   59    60
+#         [7,]   61   62   63   64   65   66   67   68   69    70
+#         [8,]   71   72   73   74   75   76   77   78   79    80
+#         [9,]   81   82   83   84   85   86   87   88   89    90
+#        [10,]   91   92   93   94   95   96   97   98   99   100
+#
+#This fills the rows first. normally it only fills the columns first 
+#
+#Select the 5th column from matrix3a, and select the 4th row from matrix3b
+print (vector3b[4,5])
+#(matrix name[row,column])
+#output - [1] 35
+vector3c=(vector3b[2,5])
+print (vector3c)
+#output - [1] 15
+#
+#3d - How can we translate matrix3a into matrix3b ?
+vector3d = t(vector3a)
+print (vector3d)
+#output -       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+#         [1,]    1    2    3    4    5    6    7    8    9    10
+#         [2,]   11   12   13   14   15   16   17   18   19    20
+#         [3,]   21   22   23   24   25   26   27   28   29    30
+#         [4,]   31   32   33   34   35   36   37   38   39    40
+#         [5,]   41   42   43   44   45   46   47   48   49    50
+#         [6,]   51   52   53   54   55   56   57   58   59    60
+#         [7,]   61   62   63   64   65   66   67   68   69    70
+#         [8,]   71   72   73   74   75   76   77   78   79    80
+#         [9,]   81   82   83   84   85   86   87   88   89    90
+#        [10,]   91   92   93   94   95   96   97   98   99   100
+#
+#3e - Add column names to matrix3a, using the LETTERS constant
+
